@@ -1,0 +1,38 @@
+<h1>Listing clients</h1>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Consultant</th>
+    <th>Indicator</th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.name %></td>
+    <td><%= client.consultant %></td>
+    <td><%= client.indicator %></td>
+    <td>
+      <%= link_to content_tag('i', '', :class => 'icon-eye-open'), client, :class => 'btn'%>
+      <%= link_to content_tag('i', '', :class => 'icon-pencil'), edit_client_path(client), :class => 'btn' %>
+      <%= link_to content_tag('i', '', :class => 'icon-remove'), client, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Client', new_client_path, :class => 'btn' %>
+<div class="btn-group">
+  <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Usuário</a>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="icon-pencil"></i> Editar</a></li>
+    <li><a href="#"><i class="icon-trash"></i> Apagar</a></li>
+    <li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="i"></i> Tornar Administrador</a></li>
+  </ul>
+</div>
