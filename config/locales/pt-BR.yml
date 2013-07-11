@@ -240,5 +240,9 @@ pt-BR:
         city: Cidade
         stade: Estado
         zip: CEP
+      product:
+        name: Nome
+        price: Preço
+        warranty: Garantia
     errors:
       <<: *errors
