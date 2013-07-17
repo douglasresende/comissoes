@@ -1,6 +1,6 @@
-<h1>Editing client</h1>
+<h1><%= t '.title' %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @client %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to t('links.show'), @client, :class => "btn" %>
+<%= link_to t('links.back'), clients_path, :class => "btn" %>

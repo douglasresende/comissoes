@@ -2,7 +2,7 @@
 
 <table class="table table-bordered table-striped table-hover">
   <tr>
-    <th>Nome</th>
+    <th><%= Client.human_attribute_name(:name) %></th>
     <th></th>
   </tr>
 
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'Novo Cliente', new_client_path, :class => 'btn' %>
+<%= link_to t('links.new', :model => 'Cliente'), new_client_path, :class => 'btn' %>

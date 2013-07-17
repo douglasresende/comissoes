@@ -244,5 +244,34 @@ pt-BR:
         name: Nome
         price: Preço
         warranty: Garantia
+      user:
+        full_name: Nome Completo
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de Senha
     errors:
       <<: *errors
+  links:
+    back: Voltar
+    show: Abrir
+    new: Novo %{model}
+    new_female: Nova %{model}
+  general:
+    form_error: "Há erros no formulário, por favor verifique:"
+  layout:
+    clients: Clientes
+    users: Usuários
+    products: Produtos
+  users:
+    new:
+      title: Novo Usuário
+    edit:
+      title: Editar Usuário
+    show:
+      title: Perfil de %{user_name}
+      edit: Editar perfil
+  clients:
+    new:
+      title: Novo Cliente
+    edit:
+      title: Editar Cliente
