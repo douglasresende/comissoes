@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.10'
 gem 'simple_form'
 gem 'brazilian-rails'
-gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -25,8 +24,12 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
+gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  # gem 'railroady'
+end
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
