@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.11'
 gem 'simple_form'
 gem 'brazilian-rails'
 # Bundle edge Rails instead:

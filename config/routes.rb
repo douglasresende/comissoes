@@ -5,6 +5,7 @@ Comissoes::Application.routes.draw do
     resources :clients
     resources :symptoms
     resources :users
+    resource  :confirmation, :only => [:show]
   end
 
   match '/:locale' => 'home#index', :locale => LOCALES

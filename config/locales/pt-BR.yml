@@ -251,6 +251,16 @@ pt-BR:
         password_confirmation: Confirmação de Senha
     errors:
       <<: *errors
+  signup_mailer:
+    confirm_email:
+      subject: 'Maxstudio.com.br - Confirme seu email'
+      title: 'Seja bem vindo ao Maxstudio.com.br!'
+      body: |
+        Olá, %{full_name}.
+        O Maxstudio.com.br é o lugar ideal para você alugar aquele quarto
+        sobrando na sua casa e ainda conhecer gente do mundo inteiro.
+      confirm_link_html: 'Para você começar a usar o site, acesse o link: %{link}'
+      thanks_html: 'Obrigado por se cadastrar no %{link}.'
   links:
     back: Voltar
     show: Abrir
@@ -263,6 +273,8 @@ pt-BR:
     users: Usuários
     products: Produtos
   users:
+    confirmations:
+      success: "Email confirmado com sucesso, obrigado!"
     new:
       title: Novo Usuário
     edit:
