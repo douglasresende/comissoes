@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :require_authentication, :only => [:new, :edit, :create, :update, :destroy]
   # GET /products
   # GET /products.json
   def index
