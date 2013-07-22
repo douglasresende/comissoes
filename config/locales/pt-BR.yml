@@ -263,6 +263,8 @@ pt-BR:
     new:
       title: Login
       sign_up: Cadastre-se
+      email: E-mail
+      password: Senha
   signup_mailer:
     confirm_email:
       subject: 'Maxstudio.com.br - Confirme seu email'
@@ -286,6 +288,8 @@ pt-BR:
       needs_login: "Para continuar, você precisa estar logado!"
   general:
     form_error: "Há erros no formulário, por favor verifique:"
+  dialogs:
+    destroy: Você tem certeza que quer remover?
   layout:
     clients: Clientes
     users: Usuários
