@@ -14,3 +14,17 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+.vagrant
+/config/database.yml
+/public/assets
+db/schema.rb
+.DS_Store
+.project
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+db/structure.sql
+spec/reports
+.pt
+*.swn

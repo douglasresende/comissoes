@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   
   has_secure_password
 
+  has_many :products
+
   before_create :generate_token
 
   scope :confirmed, where('confirmed_at IS NOT NULL')
