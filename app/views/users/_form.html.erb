@@ -1,29 +1,23 @@
-<% if @user.errors.any? %>
-<div id="error_explanation" class="alert alert-error">
-  <%= t 'general.form_error' %>
-</div>
+<% if @user.errors.any? %> 
+  <div class="alert alert-error">
+    <%= t 'general.form_error' %>
+  </div>
 <% end %>
 
-<%= form_for @user do |f| %> 
-  <p>
-    <%= f.label :full_name %>
-    <%= f.text_field :full_name %>
-    <%= error_tag @user, :full_name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= error_tag @user, :email %>
-  </p>
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= error_tag @user, :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= error_tag @user, :password_confirmation %>
-  </p>
-  <p><%= f.submit 'Salvar', :class => 'btn' %> </p>
+<%= form_for @user, :html => { :style => 'margin-bottom: 0px;' } do |f| %>
+  <dl class="dl-horizontal">
+    <dt><%= f.label :full_name %></dt>
+    <dd><%= f.text_field :full_name, :class => "span12" %></dd>
+    <dt><%= f.label :email %></dt>
+    <dd><%= f.text_field :email, :class => "span12" %></dd>
+    <dt><%= f.label :password %></dt>
+    <dd><%= f.text_field :password, :class => "span12" %></dd>
+    <dt><%= f.label :password_confirmation %></dt>
+    <dd><%= f.text_field :password_confirmation, :class => "span12" %></dd>
+  </dl>
+
+  <div class="form-actions" style="padding: 10px 0px 0px 0px; margin-bottom: 0px;">
+    <span class="pull-left"><%= link_to t('links.back'), root_path, :class => "btn" %></span>
+    <span class="pull-right"><%= f.submit t('helpers.submit.submit', :model => User.model_name.human), :class => 'btn btn-inverse' %></span>
+  </div>
 <% end %>

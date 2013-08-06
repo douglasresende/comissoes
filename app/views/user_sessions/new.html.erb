@@ -30,7 +30,7 @@
       </div>
 
       <div class="form-actions" style="padding: 10px 0px 0px 0px; margin-bottom: 0px;">
-        <span class="pull-left"><%= link_to t('.sign_up'), new_user_path %></span>
+        <span class="pull-left"><%= link_to t('.sign_up'), new_user_path, :class => "btn" %></span>
         <span class="pull-right"><%= f.submit t('helpers.submit.user_session.create'), :class => 'btn btn-inverse' %></span>
       </div>
     <% end %>

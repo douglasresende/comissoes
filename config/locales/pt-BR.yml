@@ -237,6 +237,7 @@ pt-BR:
   activerecord:
     models:
       client: Cliente
+      user: Usuário
     attributes:
       client:
         name: Nome
