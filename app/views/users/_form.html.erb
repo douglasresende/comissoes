@@ -1,6 +1,11 @@
 <% if @user.errors.any? %> 
   <div class="alert alert-error">
-    <%= t 'general.form_error' %>
+    <b><%= t 'general.form_error', :count => pluralize(@user.errors.count, "erro encontrado", "erros encontrados") %></b>
+
+    <% @user.errors.full_messages.each do |msg| %>
+      <br />- <%= msg %>
+    <% end %>
+
   </div>
 <% end %>
 
@@ -11,9 +16,9 @@
     <dt><%= f.label :email %></dt>
     <dd><%= f.text_field :email, :class => "span12" %></dd>
     <dt><%= f.label :password %></dt>
-    <dd><%= f.text_field :password, :class => "span12" %></dd>
+    <dd><%= f.password_field :password, :class => "span12" %></dd>
     <dt><%= f.label :password_confirmation %></dt>
-    <dd><%= f.text_field :password_confirmation, :class => "span12" %></dd>
+    <dd><%= f.password_field :password_confirmation, :class => "span12" %></dd>
   </dl>
 
   <div class="form-actions" style="padding: 10px 0px 0px 0px; margin-bottom: 0px;">

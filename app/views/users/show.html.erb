@@ -1,3 +1,6 @@
-<h1><%= t '.title', :user_name => @user.full_name %></h1>
-<%= render 'form' %>
-<%= link_to t('links.back'), @user %>
+<div class="well" style="max-width: 524px; margin: 0 auto 0px;">
+  <div class="form-vertical">
+    <h1><%= t '.title', :user_name => @user.full_name %></h1>
+    <%= render 'form' %>
+  </div>
+</div>

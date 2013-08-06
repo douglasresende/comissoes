@@ -288,7 +288,7 @@ pt-BR:
     alert:
       needs_login: "Para continuar, você precisa estar logado!"
   general:
-    form_error: "Há erros no formulário, por favor verifique:"
+    form_error: "Há %{count} no formulário, por favor verifique:"
   dialogs:
     destroy: Você tem certeza que quer remover?
   layout:
