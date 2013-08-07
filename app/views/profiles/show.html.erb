@@ -1,0 +1,32 @@
+<div class="well" style="max-width: 524px; margin: 0 auto 0px;">
+  <div class="form-vertical">
+    <% if @user.errors.any? %> 
+      <div class="alert alert-error">
+        <b><%= t 'general.form_error', :count => pluralize(@user.errors.count, "erro encontrado", "erros encontrados") %></b>
+
+        <% @user.errors.full_messages.each do |msg| %>
+          <br />- <%= msg %>
+        <% end %>
+
+      </div>
+    <% end %>
+
+    <%= form_for @user, :url => profile_path(), :method => :put, :html => { :style => 'margin-bottom: 0px;' } do |f| %>
+      <dl class="dl-horizontal">
+        <dt><%= f.label :full_name %></dt>
+        <dd><%= f.text_field :full_name, :class => "span12" %></dd>
+        <dt><%= f.label :email %></dt>
+        <dd><%= f.text_field :email, :class => "span12" %></dd>
+        <dt><%= f.label :password %></dt>
+        <dd><%= f.password_field :password, :class => "span12" %></dd>
+        <dt><%= f.label :password_confirmation %></dt>
+        <dd><%= f.password_field :password_confirmation, :class => "span12" %></dd>
+      </dl>
+
+      <div class="form-actions" style="padding: 10px 0px 0px 0px; margin-bottom: 0px;">
+        <span class="pull-left"><%= link_to t('links.back'), root_path, :class => "btn" %></span>
+        <span class="pull-right"><%= f.submit t('helpers.submit.submit', :model => User.model_name.human), :class => 'btn btn-inverse' %></span>
+      </div>
+    <% end %>
+  </div>
+</div>

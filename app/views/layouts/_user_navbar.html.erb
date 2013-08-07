@@ -11,8 +11,6 @@
           <li class="home-menu active"><%= link_to 'Home', root_path %></li>
           <li class="users-menu"><%= link_to t('layout.clients'), clients_path %></li>
           <li class="products-menu"><%= link_to t('layout.products'), products_path %></li>
-          <li class="users-menu"><%= link_to t('layout.users'), users_path %></li>
-          <li class="symptoms-menu"><%= link_to 'Sintomas', '' %></li>
           <li class="symptoms-menu"><%= link_to t('layout.my_profile'), user_path(current_user) %></li>
           <li class="symptoms-menu"><%= link_to t('layout.signout'), user_sessions_path, :method => :delete %></li>
         </ul>

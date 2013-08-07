@@ -1,6 +1,15 @@
+<% model_class = User %>
 <div class="well" style="max-width: 524px; margin: 0 auto 0px;">
   <div class="form-vertical">
-    <h1><%= t '.title', :user_name => @user.full_name %></h1>
-    <%= render 'form' %>
+    <dl class="dl-horizontal">
+      <dt><%= model_class.human_attribute_name :full_name %>:</dt>
+      <dd><%= @user.full_name %></dd>
+      <dt><%= model_class.human_attribute_name :email %>:</dt>
+      <dd><%= @user.email %></dd>
+    </dl>
+    <div class="form-actions" style="padding: 10px 0px 0px 0px; margin-bottom: 0px;">
+      <span class="pull-left"><%= link_to t('users.edit.title'), profile_path, :class => "btn" %></span>
+      <span class="pull-right"></span>
+    </div>
   </div>
 </div>

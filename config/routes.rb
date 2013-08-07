@@ -5,6 +5,7 @@ Comissoes::Application.routes.draw do
     resources :clients
     resources :symptoms
     resources :users
+    resource  :profile
     resource  :confirmation, :only => [:show]
     resource  :user_sessions, :only => [:create, :new, :destroy]
   end

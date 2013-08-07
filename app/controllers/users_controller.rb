@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_filter :require_no_authentication, :only => [:new, :create]
-  before_filter :can_change, :only => [:edit, :update]
+  before_filter :can_change, :only => [:show, :edit, :update, :index]
 
   def new
     @user = User.new
+  end
+
+  def index
+    redirect_to root_path()
   end
 
   def create
@@ -17,31 +21,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit
-    @user = User.find(params[:id])
+    redirect_to root_path()
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to @user, :notice => 'Cadastro atualizado com sucesso!'
-    else
-      render :edit
-    end
+    redirect_to root_path()
   end
 
   private
 
   def can_change
-    unless user_signed_in? && current_user == user
-      redirect_to user_path(params[:id])
+    unless user_signed_in?
+      redirect_to root_path()
     end
-  end
-
-  def user
-    @user ||= User.find(params[:id])
   end
 end
